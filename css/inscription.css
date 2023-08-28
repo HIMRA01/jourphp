@@ -28,3 +28,43 @@ background-color:
 #b45f06;
 color: white;
 }
+
+body{
+margin: 0;
+padding: 0;
+background-color: gray;
+}
+
+.container{
+width: 60%;
+margin: auto;
+}
+input{
+
+    width: 100%;
+    height: 35px;
+}
+.profil{
+
+    
+    width: 30px;
+    height: 30px;
+}
+
+.profil img{
+width: 100%;
+height: 100%;
+border-radius: 50%;
+}
+nav{
+
+    display: flex;
+    justify-content: flex-end;
+    border:solid 1px
+}
+.lagout{
+background-color: brown;
+color : white;
+height: 30px;
+
+}

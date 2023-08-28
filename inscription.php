@@ -8,7 +8,7 @@
   </head>
   <body>
     <h3>Page Inscription</h3>
-    <form action="traitement_inscription.php" method="post">
+    <form action="traitement.php" method="post" enctype="multipart/form-data">
       <label for="email"></label>
       <input
         type="email"
@@ -23,7 +23,7 @@
         type="text"
         placeholder="Votre nom"
         id="nom"
-        name="nom"
+        name="pseudo"
         required
       /><br /><br />
 
@@ -32,7 +32,7 @@
         type="password"
         placeholder="Mot de passe"
         id="password"
-        name="password"
+        name="mdp"
         required
       /><br /><br />
 
@@ -48,7 +48,39 @@
       <label for="fichier"></label>
       <input type="file" name="fichier" id="fichier" />
 
-      <input type="submit" value="Envoyer" />
+      <input type="submit" value="Envoyer" name="valider"/>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     </form>
   </body>
 </html>
