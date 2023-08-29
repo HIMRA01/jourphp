@@ -4,12 +4,12 @@ margin: auto;
 width: 50%;
 }
 
-
+/* 
 label{
 
 
 
-}
+} */
 
 
 input{
@@ -67,4 +67,14 @@ background-color: brown;
 color : white;
 height: 30px;
 
+}
+.post{
+width: 200px;
+height: 250px;
+margin: 10px
+}
+
+.postimg{
+
+    
 }

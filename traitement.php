@@ -66,7 +66,7 @@ if(isset($_POST['connexion'])){
             $_SESSION["id"] = $utilisateur['id_membres'];
             $_SESSION["pseudo"] = $utilisateur['pseudo'];
             $_SESSION["img"] = $utilisateur['profil_img'];
-
+setcookie("id_user", $utilisateur['id_membre'] , time() +3600, '/' , 'cours.com', false,true);
             header("Location: accueil.php");
 
         }else{
@@ -88,11 +88,22 @@ move_uploaded_file($tmp, $destination);
 // connexion a la bd
 $dbconnect = dbConnexion();
 // preparation de la  requete 
-$request = $dbconnect->prepare("INSERT INTO posts (membre_id,photo,text)VALUES (?,?,?)");
+$request = $dbconnect->prepare("INSERT INTO post (membre_id,photo,text)VALUES (?,?,?)");
 // excution de la raquete 
 try{
     $request->execute(array($_SESSION["id"],$image_name, $message));
 }catch(PDOException $e){
     echo $e->getMessage();
 }
+}
+
+if(isset($_GET['idpost'])){
+
+    $dbconnect = dbConnexion();
+    $request = $dbconnect->prepare("SELECT likes FROM post WHERE id_post = ?");
+    $request->execute(array($_GET['idpost']));
+    $likes = $request->fetch();
+    $request1 = $dbconnect->prepare("UPDATE posts SET likes = ? WHERE id_post = ?");
+    $request1->execute(array($likes['likes']+1, $_GET['idpost']));
+header("location: accueil.php");
 }
