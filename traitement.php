@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once "database.php";
 if(isset($_POST['valider'])){ // c'est pour l'inscription
     $email = $_POST['email'];
